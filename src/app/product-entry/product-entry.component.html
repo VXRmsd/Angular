@@ -42,7 +42,7 @@
     </div>
 </div>
 
-<!-- <p [ngStyle]="{'color': myColor, 'font-weight':myFont}">Red and bold string</!--> -->
+<!-- <p [ngStyle]="{'color': myColor, 'font-weight':myFont}">Red and bold string</!-->
 
 
 <!-- <select name="myColor" (click)="myColor=$event.target.value"> -->
@@ -57,4 +57,5 @@
 
 <h1>{{text}}</h1>
 
-<h1 [className]='blueboulder' [innerText]="text1"></h1>
+<h1 [className]="disabled == true ? bluebolddisabled : blueboulder" [innerText]="text1"></h1>
+<p class="blueBoldDisabled">Hello</p>

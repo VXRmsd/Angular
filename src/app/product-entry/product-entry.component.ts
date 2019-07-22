@@ -19,6 +19,8 @@ export class ProductEntryComponent implements OnInit {
   myFont='bold'
 
   blueboulder='blueBold'
+  bluebolddisabled='blueBoldDisabled'
+  disabled=true
 
   myStyle={'color': this.myColor, 'font-weight':this.myFont}
 
