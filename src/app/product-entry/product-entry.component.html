@@ -48,16 +48,13 @@
 <!-- <select name="myColor" (click)="myColor=$event.target.value"> -->
 
         <p [ngStyle]="myStyle">Red and bold string No:2</p>
-<select name="myColor" (click)="myColor=$event.target.value; updateStyle()">
+<select name="myColor" (click)="text=$event.target.value; updateStyle()">
 <option value="red">Red</option>
 <option value="green">Green</option>
 
-<!-- 
-<p [ngStyle]="myStyle">Red and bold string No:2</p>
-<select name="myColor" (click)="myColor=$event.target.value; updateStyle()"></select> -->
 
 </select>
 
 <h1>{{text}}</h1>
 
-<h1 [innerText]="text1"></h1>
+<h1 [className]='blueboulder' [innerText]="text1"></h1>

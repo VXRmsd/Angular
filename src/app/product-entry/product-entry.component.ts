@@ -18,6 +18,8 @@ export class ProductEntryComponent implements OnInit {
   myColor='red'
   myFont='bold'
 
+  blueboulder='blueBold'
+
   myStyle={'color': this.myColor, 'font-weight':this.myFont}
 
   constructor() { }
