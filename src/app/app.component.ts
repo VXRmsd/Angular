@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Experzlab Tech';  /*changed last class */
+
+  monthsArray=['Jan','Feb','Mar']
+
+  changeMonths(e){
+    console.log(e.target.value)
+  }
+
 }

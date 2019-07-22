@@ -1,22 +1,27 @@
-<div>
-  <input type="text" name="value1" #valuex (input)="value1=$event.target.value" value="{{value1}}">
-  ==={{valuex.value}},{{value1}}
-</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
-<div>
-  <input type="text" (input)="value2=$event.target.value" value="{{value2}}">
-  ==={{value2}}
-</div>
+<form action="javascript:void">
 
-<div>
-  <button *ngFor="let i of [0,1,2,3,4,5,6,7,8,9]" (click)="calculate(i)">{{i}}</button>
-</div>
-<button *ngFor="let i of ['+','-','*','/']" (click)="calculate(i)">{{i}}</button>
-<!-- operator=+ -->
-<div>
-  <input type="text" value="{{result}}">
-</div>
-<!-- operand1={{value1}}}}
-  operand2={{value2}}
-  operator=+
-  result={{result}} -->
+  <div>
+
+
+    <div>
+      <input type="text" name="value1" #valuex (input)="value1=$event.target.value" value="{{value1}}">
+    </div>
+
+
+    <div>
+      <button *ngFor="let i of [0,1,2,3,4,5,6,7,8,9]" (click)="calculate(i)">{{i}}</button>
+    </div>
+
+    <div>
+      <button *ngFor="let i of ['+','-','*','/','c']" (click)="getOperand(i)">{{i}}</button>
+    </div>
+
+    <div>
+      <input type="text" value="{{result}}">
+    </div>
+
+    </div>
+
+</form>
