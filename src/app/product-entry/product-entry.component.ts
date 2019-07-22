@@ -10,6 +10,9 @@ export class ProductEntryComponent implements OnInit {
 
   done=false
 
+  text = 'welcome to expertzlab'
+  text1 = 'welcome to gofree labs'
+
   productArray:Product[]= <any> <Product[]> []
 
   myColor='red'
