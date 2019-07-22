@@ -42,10 +42,13 @@
     </div>
 </div>
 
-<p [ngStyle]="{'color': myColor, 'font-weight':myFont}">Red and bold string</p>
+<!-- <p [ngStyle]="{'color': myColor, 'font-weight':myFont}">Red and bold string</!--> -->
 
 
-<select name="myColor" (click)="myColor=$event.target.value">
+<!-- <select name="myColor" (click)="myColor=$event.target.value"> -->
+
+        <p [ngStyle]="myStyle">Red and bold string No:2</p>
+<select name="myColor" (click)="myColor=$event.target.value; updateStyle()">
 <option value="red">Red</option>
 <option value="green">Green</option>
 

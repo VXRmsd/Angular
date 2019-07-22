@@ -15,7 +15,7 @@ export class ProductEntryComponent implements OnInit {
   myColor='red'
   myFont='bold'
 
-  // myStyle={'color': this.myColor, 'font-weight':this.myFont}
+  myStyle={'color': this.myColor, 'font-weight':this.myFont}
 
   constructor() { }
 
@@ -33,9 +33,9 @@ export class ProductEntryComponent implements OnInit {
     this.productArray.push(product)
   }
 
-  // updateStyle(){
+  updateStyle(){
 
-  //   this.myStyle={'color': this.myColor, 'font-weight':this.myFont}
+    this.myStyle={'color': this.myColor, 'font-weight':this.myFont}
 
-  // }
+  }
 }
