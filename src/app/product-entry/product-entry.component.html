@@ -42,3 +42,15 @@
     </div>
 </div>
 
+<p [ngStyle]="{'color': myColor, 'font-weight':myFont}">Red and bold string</p>
+
+
+<select name="myColor" (click)="myColor=$event.target.value">
+<option value="red">Red</option>
+<option value="green">Green</option>
+
+<!-- 
+<p [ngStyle]="myStyle">Red and bold string No:2</p>
+<select name="myColor" (click)="myColor=$event.target.value; updateStyle()"></select> -->
+
+</select>

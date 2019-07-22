@@ -12,6 +12,11 @@ export class ProductEntryComponent implements OnInit {
 
   productArray:Product[]= <any> <Product[]> []
 
+  myColor='red'
+  myFont='bold'
+
+  // myStyle={'color': this.myColor, 'font-weight':this.myFont}
+
   constructor() { }
 
   ngOnInit() {
@@ -28,4 +33,9 @@ export class ProductEntryComponent implements OnInit {
     this.productArray.push(product)
   }
 
+  // updateStyle(){
+
+  //   this.myStyle={'color': this.myColor, 'font-weight':this.myFont}
+
+  // }
 }
