@@ -13,14 +13,19 @@ export class ProductEntryComponent implements OnInit {
   text = 'welcome to expertzlab'
   text1 = 'welcome to gofree labs'
 
+  text2 = 'CHilds play'
+
   productArray:Product[]= <any> <Product[]> []
 
   myColor='red'
   myFont='bold'
 
-  blueboulder='blueBold'
+  blueBold='blueBold'
   bluebolddisabled='blueBoldDisabled'
+
   disabled=true
+
+  condition=true
 
   myStyle={'color': this.myColor, 'font-weight':this.myFont}
 

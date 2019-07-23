@@ -57,5 +57,16 @@
 
 <h1>{{text}}</h1>
 
-<h1 [className]="disabled == true ? bluebolddisabled : blueboulder" [innerText]="text1"></h1>
-<p class="blueBoldDisabled">Hello</p>
+<h1>{{text1}}</h1>
+
+<h1>{{text2}}</h1>
+
+<h1 [className]="disabled ? bluebolddisabled : blueBold" [innerText]="text"></h1>
+
+<!-- <h1 [ngClass]="{blueboulder: condition}" [innerText]="text1"> -->
+
+<h1 [class.blueBold]="condition" [innerText]="text2"></h1>
+
+<h1 [ngClass]= "{blueBold:condition}" [innerText]="text1" ></h1>
+
+
