@@ -1,7 +1,3 @@
-
-
-
-
 <div class="container">
     <div id="productEntryForm" class="col-sm-12 row">
         <div class="col-sm-6 col">
@@ -31,7 +27,7 @@
         <span *ngSwitchCase="true">Matched true and yes</span>
         <span *ngSwitchDefault>Default if done is FALSE</span>
     </div>
-    
+
 
     <div id="ProductListing" class="col-sm-12 row">
         <div class="col-sm-12" *ngFor="let product of productArray">
@@ -47,10 +43,10 @@
 
 <!-- <select name="myColor" (click)="myColor=$event.target.value"> -->
 
-        <p [ngStyle]="myStyle">Red and bold string No:2</p>
+<p [ngStyle]="myStyle">Red and bold string No:2</p>
 <select name="myColor" (click)="text=$event.target.value; updateStyle()">
-<option value="red">Red</option>
-<option value="green">Green</option>
+    <option value="red">Red</option>
+    <option value="green">Green</option>
 
 
 </select>
@@ -67,6 +63,14 @@
 
 <h1 [class.blueBold]="condition" [innerText]="text2"></h1>
 
-<h1 [ngClass]= "{blueBold:condition}" [innerText]="text1" ></h1>
+<h1 [ngClass]="{blueBold:condition}" [innerText]="text1"></h1>
 
 
+<select name="as1" (click)="as1=$event.target.value; updateStyles()">
+
+    <option value="red">Blue</option>
+    <option value="green">Green</option>
+
+</select>
+
+<h1 [ngClass]="obj" [innerText]="text"></h1>

@@ -27,6 +27,8 @@ export class ProductEntryComponent implements OnInit {
 
   condition=true
 
+
+
   myStyle={'color': this.myColor, 'font-weight':this.myFont}
 
   constructor() { }
@@ -48,6 +50,25 @@ export class ProductEntryComponent implements OnInit {
   updateStyle(){
 
     this.myStyle={'color': this.myColor, 'font-weight':this.myFont}
+
+  }
+
+  obj={greenBold:false, blueBold:false}
+
+  as1=''
+
+  updateStyles(){
+
+    if(this.as1=='green'){
+      this.obj.greenBold=true
+      this.obj.blueBold=false
+    }
+
+    else{
+      this.obj.greenBold=false
+      this.obj.blueBold=true
+
+    }
 
   }
 }
