@@ -7,12 +7,13 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductEntryComponent } from './product-entry/product-entry.component';
+import { SCalculatorComponent } from './scalculator/scalculator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductEntryComponent,
-    
+    SCalculatorComponent
     
   ],
   imports: [
