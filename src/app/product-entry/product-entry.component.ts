@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{Product} from './product'
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-entry',
@@ -27,48 +28,22 @@ export class ProductEntryComponent implements OnInit {
 
   condition=true
 
+  _prodService: ProductService
+  _productList
+
 
 
   myStyle={'color': this.myColor, 'font-weight':this.myFont}
 
-  constructor() { }
+  constructor(prodService:ProductService) { 
+    this._prodService = prodService
+  }
 
   ngOnInit() {
-  }
- 
-  saveProduct(pid,pname) {
+    this._prodService.getProductList().subscribe((data) => {
 
-    // console.log(pid,pname)
-
-    let product = new Product(pid,pname)
-
-    console.log(product)
-
-    this.productArray.push(product)
-  }
-
-  updateStyle(){
-
-    this.myStyle={'color': this.myColor, 'font-weight':this.myFont}
-
-  }
-
-  obj={greenBold:false, blueBold:false}
-
-  as1=''
-
-  updateStyles(){
-
-    if(this.as1=='green'){
-      this.obj.greenBold=true
-      this.obj.blueBold=false
-    }
-
-    else{
-      this.obj.greenBold=false
-      this.obj.blueBold=true
-
-    }
-
-  }
+      this._productList = data
+  })
+  
+}
 }

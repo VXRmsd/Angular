@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <div id="productEntryForm" class="col-sm-12 row">
+    <div id="productEntryForm" class="colob-sm-12 row">
         <div class="col-sm-6 col">
             <label for="pname">Enter Product Name:</label>
         </div>
@@ -19,7 +19,7 @@
 
     <div id="saveProduct" class="col-sm-12 row">
         <div class="col" style="text-align: center">
-            <button class="btn-primary" (click)="saveProduct(pid.value,pname.value)">Save Product</button>
+            <button class="btn-primary">Save Product</button>
         </div>
     </div>
 
@@ -72,5 +72,13 @@
     <option value="green">Green</option>
 
 </select>
-
+<!--
 <h1 [ngClass]="obj" [innerText]="text"></h1>
+-->
+<ul>
+    <li *ngFor="let pitem of _productList">
+
+        Name={{pitem.name}},
+        Id ={{pitem.id}}
+    </li>
+</ul>

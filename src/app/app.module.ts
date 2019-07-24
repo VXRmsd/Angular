@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductEntryComponent } from './product-entry/product-entry.component';
 import { SCalculatorComponent } from './scalculator/scalculator.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SCalculatorComponent } from './scalculator/scalculator.component';
     AppRoutingModule,
     FormsModule,
     AngularFontAwesomeModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    HttpClientModule
    
   ],
   providers: [],
