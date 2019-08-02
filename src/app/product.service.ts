@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; //should come automatically otherwise add manually
 import { of } from 'rxjs';
 import {filter} from 'rxjs/operators'
+import {map} from 'rxjs/operators'
+
 
 
 @Injectable({
@@ -25,7 +27,9 @@ export class ProductService {
   of(1,2,3,4,5)
   .pipe(
     filter((num) =>
-     { return  (num%2==0) })
+     { return  (num%2==0) 
+    }),
+    map(num => num * num)
   )
   .subscribe(v1 => {
     console.log(v1)
