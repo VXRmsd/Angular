@@ -40,10 +40,11 @@ export class ProductEntryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._prodService.getProductList().subscribe((data) => {
+    this._prodService.getProductList()
+    // .subscribe((data) => {
 
-      this._productList = data
-  })
-  
+    //   this._productList = data
+  //})
+
 }
 }
