@@ -44,9 +44,10 @@ export class ProductEntryComponent implements OnInit {
       .subscribe((data) => {
 
         this._productList = data
+        console.log(this._productList)
       })
 
-    console.log(this._productList)
+    // console.log(this._productList)
 
   }
 }
