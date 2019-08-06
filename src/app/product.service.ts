@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http'; //should come automatically otherwise add manually
-import { of,pipe } from 'rxjs';
+import { of,pipe, interval } from 'rxjs';
 import {filter} from 'rxjs/operators';
 import {map} from 'rxjs/operators';
 
@@ -24,17 +24,15 @@ export class ProductService {
 
   //  return this._http.get('http://localhost:4200/assets/product.json')
 
-  const stream=of(1,2,3,4,5,6)
-  const pipe1=pipe(
-    filter((num:number) =>
-     { return  (num%2==0) 
-    }),
-    map(num => num * num)
+    interval(1000).pipe(
+      
+      filter(num => (num %2) === 0),
+      map(num => num * num)
+    
+      ).subscribe(
+      val => {
+        console.log(val)
+    }
   )
-
-  const obs=pipe1(stream)
-  obs.subscribe(v1 => {
-    console.log(v1)
-  })
   }
 }
