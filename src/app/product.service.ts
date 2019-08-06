@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http'; //should come automatically otherwise add manually
 import { of,pipe, interval } from 'rxjs';
-import {filter} from 'rxjs/operators';
+import {filter, tap} from 'rxjs/operators';
 import {map} from 'rxjs/operators';
 
 
@@ -22,17 +22,11 @@ export class ProductService {
 
   getProductList(){
 
-  //  return this._http.get('http://localhost:4200/assets/product.json')
-
-    interval(1000).pipe(
-      
-      filter(num => (num %2) === 0),
-      map(num => num * num)
+   return this._http.get('http://localhost:4200/assets/product.json').pipe(
+    tap((data)  => {
+        console.log('received from server:',data)
+    })
     
-      ).subscribe(
-      val => {
-        console.log(val)
-    }
-  )
-  }
-}
+  ) 
+
+  }  }

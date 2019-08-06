@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{Product} from './product'
+import { Product } from './product';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -9,42 +9,44 @@ import { ProductService } from '../product.service';
 })
 export class ProductEntryComponent implements OnInit {
 
-  done=false
+  done = false
 
   text = 'welcome to expertzlab'
   text1 = 'welcome to gofree labs'
 
   text2 = 'CHilds play'
 
-  productArray:Product[]= <any> <Product[]> []
+  productArray: Product[] = <any><Product[]>[]
 
-  myColor='red'
-  myFont='bold'
+  myColor = 'red'
+  myFont = 'bold'
 
-  blueBold='blueBold'
-  bluebolddisabled='blueBoldDisabled'
+  blueBold = 'blueBold'
+  bluebolddisabled = 'blueBoldDisabled'
 
-  disabled=true
+  disabled = true
 
-  condition=true
+  condition = true
 
   _prodService: ProductService
   _productList
 
 
 
-  myStyle={'color': this.myColor, 'font-weight':this.myFont}
+  myStyle = { 'color': this.myColor, 'font-weight': this.myFont }
 
-  constructor(prodService:ProductService) { 
+  constructor(prodService: ProductService) {
     this._prodService = prodService
   }
 
   ngOnInit() {
     this._prodService.getProductList()
-    // .subscribe((data) => {
+      .subscribe((data) => {
 
-    //   this._productList = data
-  //})
+        this._productList = data
+      })
 
-}
+    console.log(this._productList)
+
+  }
 }
