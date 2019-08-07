@@ -25,27 +25,35 @@ export class ProductService {
    return this._http.get('http://localhost:4200/assets/product.json')
    .pipe(
      map((data:any[]) => {
-        const ndata = []
-        data.forEach((el) => {
-            console.log('El:',el)
-            const sid = 'S-' + el.id
-            const sname = 'S-' + el.name
-            // data.splice(el,1)
-            ndata.push({
-                'id': sid,
-                'name': sname
-            })
-        })
-            return ndata
+        // const ndata = []
+        // data.forEach((el) => {
+        //     console.log('El:',el)
+        //     const sid = 'S-' + el.id
+        //     const sname = 'S-' + el.name
+        //     // data.splice(el,1)
+        //     ndata.push({
+        //         'id': sid,
+        //         'name': sname
+        //     })
+        // })
+        //     return ndata
+
+        return throwError(data)
      }
      ),
+
+     catchError(this.handleError('GetProductList')),
+
     tap((data)  => {
         console.log('received from server:',data)
-    }
-    
-    ),
+    }),
 
-    catchError(this.handleError('GetProductList'))
+    catchError((err)=>{
+        console.log("error",err)
+        return throwError(err)
+
+    })
+   
     
   ) 
 
