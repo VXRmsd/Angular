@@ -28,8 +28,9 @@ export class ProductEntryComponent implements OnInit {
 
   condition = true
 
-  _prodService: ProductService
-  _productList
+  _prodService: ProductService;
+  _productList;
+  error_messages = [];
 
 
 
@@ -37,17 +38,28 @@ export class ProductEntryComponent implements OnInit {
 
   constructor(prodService: ProductService) {
     this._prodService = prodService
-  }
+  } 
 
   ngOnInit() {
     this._prodService.getProductList()
-      .subscribe((data) => {
+      .subscribe(
 
-        this._productList = data
-        console.log(this._productList)
-      })
+        res => {
+          this._productList = res
+        },
+        err => {
+          this.error_messages.push(err)
+          this.error_messages.push('server error:plz retry again')
+          console.log('errors'+err)
+        },
 
-    // console.log(this._productList)
+        () => {
+          console.log('stream completed')
+        }
+      )
+      // console.log(this._productList)
+ }
 
-  }
 }
+
+
