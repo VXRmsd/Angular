@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http'; //should come automatically otherwise add manually
-import { of,pipe, interval, throwError } from 'rxjs';
+import { of,pipe, interval, throwError, Observable } from 'rxjs';
 import {filter, tap, catchError} from 'rxjs/operators';
 import {map} from 'rxjs/operators';
 
@@ -45,12 +45,21 @@ export class ProductService {
     
     ),
 
-    catchError(err =>{
-      console.log('Error in PS:',err)
-      return throwError(err)
-    } )
+    catchError(this.handleError('GetProductList'))
     
   ) 
 
   } 
- }
+
+  handleError(op, result?:Observable<Object>, err?:any){
+
+    return (err):Observable<Object> => {
+
+      console.log('OP',op)
+      console.log('ERROR',err)
+        return result
+    }
+    
+
+  }
+}
