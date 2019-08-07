@@ -57,7 +57,7 @@ export class ProductService {
 
       console.log('OP',op)
       console.log('ERROR',err)
-        return result
+        return throwError(err)
     }
     
 
